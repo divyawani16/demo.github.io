@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Galaxy</title>
+</head>
+
+<style>
+
+
+
+
+.button-12 {
+    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  background: #080808;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #DFDEDF;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-12:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+ 
+}
+.button-12:hover{
+    background: #252323;
+}
+
+</style>
+
+<body>
+    
+     <nav> 
+        <label class="logo">Game Galaxy</label>
+        <ul>
+           <input type="button" value="Logout" onclick="back()" class="button-12" />
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Welcome Back</h1>
+    </main>
+
+    
+        <div class="wrapper">
+            <p>
+                <span id="myButton">Play Games!</span>
+            </p>
+        </div>
+        <div class="slider"></div>
+         <div id="sd">
+             <img src="img/bird.webp" alt="" id="imge">  
+        </div>
+        
+        
+    </div>
+
+   <?php
+        include("dash.php");
+   ?>
+
+<script>
+
+    //accesing the html elements
+    var t=document.getElementById("sd");
+    let imag=document.getElementById('imge') ;
+    let im=['img/Xo.png','img/bird.webp','img/car.png'];
+    let im1=['img/Xo.png','img/bird.webp','img/car.png'];
+
+    //sliding image on dashboard
+    setInterval(function(){
+        let random =Math.floor(Math.random() * 3);
+        imge.src =im[random];
+    },2000)
+
+    // transfer to the game page
+    document.getElementById("myButton").onclick = function () {
+        location.href = "game.html";
+    }
+
+    //Back button script
+    function back()
+    {
+        location.href="index.php";
+    }
+
+</script>
+</body>
+</html>

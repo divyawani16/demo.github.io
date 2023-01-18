@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Games</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  
+  <style>
+    html {
+      box-sizing: border-box;
+      background: #ffc600;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+    }
+    
+    body {
+      margin: 0;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .panels {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+    }
+    input{
+      color: black;
+      position:absolute;
+    }
+    .panel {
+      cursor: pointer;
+      background: #6B0F9C;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+      color: white;
+      text-align: center;
+      align-items: center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size: cover;
+      background-position: center;
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel1 { background-image:url(img/car.png);}
+    .panel2 { background-image:url(img/bird.webp);}
+    .panel3 { background-image:url(img/Xo.png);}
+    .panel4 { background-image:url(img/pingpong.jpg);}
+    
+
+    /* Flex Items */
+    .panel > * {
+      margin: 0;
+      width: 100%;
+      transition: transform 0.5s;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* .panel > *:first-child { transform: translateY(-100%); } */
+    .panel.open-active > *:first-child { transform: translateY(-100%); }
+    /* .panel > *:last-child { transform: translateY(100%); }
+    .panel.open-active > *:last-child { transform: translateY(0); } */
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'Amatic SC', cursive;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 2em;
+    }
+    
+    .panel p:nth-child(2) {
+      font-size: 4em;
+    }
+
+    .panel:hover {
+      flex: 2;
+      font-size: 40px;
+    }
+    #bt{
+      cursor: pointer;
+      margin-left: 20px;
+    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  background: #080808;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #DFDEDF;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+    }
+    #bt:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+ 
+}
+#bt:hover{
+    background: #252323;
+}
+  </style>
+
+<input type="button" value="GO BACK" onclick="history.back()" id="bt">
+  <div class="panels">
+ 
+    <div class="panel panel1" onclick="c1()">
+      <p>g</p>
+    
+    </div>
+    <div class="panel panel2" onclick="c2()">
+    
+      <p>a</p>
+      
+    </div>
+    <div class="panel panel3" onclick="c3()">
+    
+      <p>m</p>
+    
+    </div>
+    <div class="panel panel4" onclick="c4()">
+     
+      <p>e</p>
+    </div>
+  </div>
+
+  <script>
+      
+    const panels = document.querySelectorAll('.panel');
+
+
+    function toggleOpen() {
+      this.classList.toggle('open');
+      
+    }
+
+    function toggleActive(e) {
+      console.log(e.propertyName);
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
+    //<script type="text/javascript">
+    function c1() {
+    location.href = "car/index.html";
+      };
+      function c2() {
+    location.href = "bird/index.html";
+      };
+      function c3() {
+    location.href = "tic-tac-toe/index.html";
+      };
+      function c4() {
+    location.href = "pingpong/index.html";
+      };
+</script>
+  </script>
+
+</body>
+</html>

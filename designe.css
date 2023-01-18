@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+body {
+  background: url("img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow-x: hidden;
+}
+/* navigation */
+
+.navbar {
+  padding: 0px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background-color: rgba(32, 28, 28, 0.438);
+}
+.navbar img {
+  width: 50px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px 20px;
+}
+.menu {
+  display: flex;
+  text-decoration: none;
+  width: 50%;
+  margin-left: 50%;
+}
+.menu li {
+  margin: auto;
+  cursor: pointer;
+  font-size: 20px;
+  list-style: none;
+}
+.menu li a {
+  color: rgb(245, 236, 236);
+  text-decoration: none;
+  font-family: ui-serif;
+  transition: all 0.3s;
+}
+.menu li a:hover {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/* section */
+.sec {
+  display: flex;
+  height: 100vh;
+}
+.paradiv {
+  width: 70%;
+}
+.heading {
+  color: thistle;
+  font-size: xxx-large;
+  width: 100%;
+  margin-left: 25%;
+  padding-top: 15%;
+  font-family: cursive;
+  text-shadow: 1px 10px 2px rgb(0, 0, 0.4, 98);
+  transition: 0.3s;
+}
+span {
+  color: red;
+}
+
+.img2 {
+  width: 30%;
+}
+.img2 img {
+  width: 50%;
+  height: 30%;
+  border-radius: 50%;
+  margin: 15ch 15ch 0ch 17ch;
+  align-items: center;
+}
+
+.btn {
+  margin-left: 25%;
+  padding-top: 5%;
+  margin-top: 4%;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(34, 28, 28, 0.918);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  padding: 15px 32px;
+}
+
+.btn:hover {
+  margin-left: 25%;
+  padding-top: 5%;
+  padding: 15px 32px;
+  color: white;
+  background-color: #f87952;
+  box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.849);
+  transform: translateY(-7px);
+}
+
+/* sign in from */
+.box {
+  margin-left: 1000px;
+  text-align: center;
+  background-color: rgba(54, 0, 155, 0.296);
+  width: 30%;
+  height: 60%;
+  border-radius: 50px;
+  transform: translate(-10%, -40%);
+  position: absolute;
+}
+.box2 {
+  background-color: rgba(54, 0, 155, 0.296);
+  height: 80%;
+}
+.box h1 {
+  margin-top: 40px;
+  color: white;
+}
+.box input[type="text"],
+.box input[type="password"],
+#gender,
+#country,
+option {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 30px auto;
+  /* text-align: center; */
+  width: 250px;
+  border: 2px solid #3498db;
+  padding: 10px 10px;
+  border-radius: 20px;
+  outline: none;
+  color: white;
+  transition: 0.3s;
+}
+
+option {
+  color: black;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus,
+#gender:focus,
+#country:focus {
+  width: 300px;
+  border-color: yellowgreen;
+}
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  /* width: 250px; */
+  border: 2px solid yellowgreen;
+  padding: 10px 40px;
+  border-radius: 20px;
+  outline: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.box input[type="submit"]:hover {
+  background-color: yellowgreen;
+  cursor: pointer;
+  width: 150px;
+}
+.box input::placeholder {
+  color: white;
+}
+
+@media all and(max-width:500px) {
+  .heading {
+    visibility: hidden;
+  }
+}
